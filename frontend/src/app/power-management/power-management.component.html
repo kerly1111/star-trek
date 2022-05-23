@@ -1,0 +1,73 @@
+<div style="padding: 20px 20px;">
+  <mat-toolbar color="secondary">
+    <span>Gestión de potencia</span>
+  </mat-toolbar>
+  <mat-card>
+    <mat-grid-list cols="5" rowHeight="70px">
+      <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field>
+          <mat-label>Daño inyector A</mat-label>
+          <input matInput [(ngModel)]="reactor.injectorDamageA" type="number" required>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field>
+          <mat-label>Daño inyector B</mat-label>
+          <input matInput [(ngModel)]="reactor.injectorDamageB" type="number" required>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field>
+          <mat-label>Daño inyector C</mat-label>
+          <input matInput [(ngModel)]="reactor.injectorDamageC" type="number" required>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <mat-form-field>
+          <mat-label>Velocidad de la Luz %</mat-label>
+          <input matInput [(ngModel)]="reactor.speedOfLight" type="number" required>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+        <button mat-raised-button color="primary" (click)='onSubmit(reactor)'>Primary</button>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+</div>
+<div style="padding: 20px 20px;">
+  <mat-toolbar color="secondary">
+    <span>Resultado</span>
+  </mat-toolbar>
+  <mat-card *ngIf="show">
+    <mat-grid-list cols="7" rowHeight="70px">
+      <mat-grid-tile colspan="1" rowspan="1">
+          <mat-label>A = {{result.injectorA}}</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+          <mat-label>B = {{result.injectorB}}</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="1" rowspan="1">
+          <mat-label>C = {{result.injectorC}}</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="1">
+          <mat-label>Tiempo Funcionamiento = {{result.operatingTime}}</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="1">
+        <mat-label></mat-label>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+  <mat-card *ngIf="!show">
+    <mat-grid-list cols="7" rowHeight="70px">
+      <mat-grid-tile colspan="3" rowspan="1">
+          <mat-label>Resultado esperado : Unable to comply</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="1">
+          <mat-label>Tiempo Funcionamiento = {{result.operatingTime}}</mat-label>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2" rowspan="1">
+        <mat-label></mat-label>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
+</div>
