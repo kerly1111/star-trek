@@ -1,0 +1,18 @@
+{
+  "name": "api-rest-star-trek",
+  "version": "1.0.0",
+  "description": "Api rest de star trek",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon index.js"
+  },
+  "author": "KERLY MARTINEZ CASTRO",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16"
+  }
+}
